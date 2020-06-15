@@ -538,6 +538,8 @@ message Enums {
           AUTOPLAY_SOUND_OFF = 2;
           CLICK_TO_PLAY = 3;
           MOUSE_OVER = 4;
+          VIEWPORT_SOUND_ON = 5;
+          VIEWPORT_SOUND_OFF = 6;
         }
 
         // OpenRTB 6.9: Various options for the video start delay. If the start delay
@@ -787,9 +789,6 @@ message Enums {
     }
 
     message User {
-      // UserID types.
-      // The enum value less then 100 should be in sync with
-      // buzz/mysql/data/version 0.5/insert_segment_user_type.sql
       enum UserIdType {
         UNKNOWN = -1;
         BEESWAX = 0;
@@ -803,6 +802,7 @@ message Enums {
         OTHER_MOBILE_ID = 8; // The serving system will use this type when the mobile OS is unknown.
                              // The request will be processed in the same way as other
                              // mobile ids. (Prefix with `mid.` and do frequency cap, user_data augmentation, etc)
+        IP_ADDRESS = 9; // Support for IP Segments
       }
     }
   }
@@ -830,6 +830,7 @@ message Enums {
     // Exchange Id.
     // These values are obtained from inventory_source table in fes_buzz_db.
     enum Source {
+<<<<<<< HEAD
       UNKNOWN_SOURCE  = -1;
       GOOGLE_ADX      =  0;
       LIVERAIL        =  1;
@@ -963,6 +964,236 @@ message Enums {
       POLAR           =  129;
       UNITY           =  130;
       DAILYMOTION     =  131;
+=======
+      reserved 22, 135, 209; // Deprecated exchanges
+      UNKNOWN_SOURCE       = -1;
+      GOOGLE_ADX           =  0;
+      LIVERAIL             =  1;
+      BRIGHTROLL           =  2;
+      MOPUB                =  3;
+      AERSERV              =  4;
+      PULSEPOINT           =  5;
+      RUBICON              =  6;
+      ADAPTV               =  7;
+      MILLENNIAL           =  8;
+      APPNEXUS             =  9;
+      OPENX                =  10;
+      PUBMATIC             =  11;
+      OPERA_MEDIA          =  12;
+      RTK                  =  13;
+      INNERACTIVE          =  14;
+      TREMOR               =  15;
+      INDEX_EXCHANGE       =  16;
+      YAHOO                =  17;
+      SMAATO               =  18;
+      APP_LOVIN            =  19;
+      MOLABS               =  20;
+      SPOTX                =  21;
+      ADBUDDIZ             =  23;
+      ADCONDUCTOR          =  24;
+      ADEASY               =  25;
+      ADFORM               =  26;
+      ADLANTIC             =  27;
+      ADMAX                =  28;
+      ADMEDIA              =  29;
+      ADMETA               =  30;
+      ADMIXER              =  31;
+      ADMIZED              =  32;
+      ADOP                 =  33;
+      ADTHINK              =  34;
+      ADRIVER              =  35;
+      ADRU                 =  36;
+      ADSCALE              =  37;
+      ADSNATIVE            =  38;
+      ADSKOM               =  39;
+      ADSPRUCE             =  40;
+      ADSTIR               =  41;
+      ADSUPPLY             =  42;
+      ADUNITY              =  43;
+      ADYOULIKE            =  44;
+      AMBIENT              =  45;
+      ANCORA               =  46;
+      AOL                  =  47;
+      APPVADOR             =  48;
+      AVOCARROT            =  49;
+      AXONIX               =  50;
+      BEACHFRONT           =  51;
+      BETWEEN              =  52;
+      BIDTELLECT           =  53;
+      BLUEWATERADS         =  54;
+      CAULY                =  55;
+      CENTRO               =  56;
+      CHAMELEON            =  57;
+      CLICKONOMETRICS      =  58;
+      CONVERGE             =  59;
+      COULL                =  60;
+      DISH                 =  61;
+      EXPERIAN             =  62;
+      FALKTECH             =  63;
+      FMX                  =  64;
+      FIDELITY             =  65;
+      FLUCT                =  66;
+      COX                  =  67;
+      GENIEE               =  68;
+      GMO                  =  69;
+      FLOOR6               =  70;
+      GUMGUM               =  71;
+      IBILLBOARD           =  72;
+      IMOIBLE              =  73;
+      KARGO                =  74;
+      KIOSKED              =  75;
+      KRUX                 =  76;
+      LIGATUS              =  77;
+      LIVEINTENT           =  78;
+      LKQD                 =  79;
+      LUPON                =  80;
+      MADS                 =  81;
+      MEDIABONG            =  82;
+      MICROAD              =  83;
+      MOBFOX               =  84;
+      MOBSMART             =  85;
+      MOCOPLEX             =  86;
+      NASMEDIA             =  87;
+      NATIVEADS            =  88;
+      NETSPRINT            =  89;
+      OOYALA               =  90;
+      OPTIMATIC            =  91;
+      POWERLINKS           =  92;
+      PROFITX              =  93;
+      PUBNATIVE            =  94;
+      REALVU               =  95;
+      REPUBLER             =  96;
+      SARA                 =  97;
+      SCALEOUT             =  98;
+      SHARETHROUGH         =  99;
+      SMARTADSERVER        =  100;
+      SONOBI               =  101;
+      SORTABLE             =  102;
+      SSPICYADS            =  103;
+      STICKYADS            =  104;
+      SWITCHCONCEPTS       =  105;
+      TEADS                =  106;
+      THIRDPRESENCE        =  107;
+      THRONE               =  108;
+      TPMN                 =  109;
+      TRIPLELIFT           =  110;
+      UCFUNNEL             =  111;
+      UNRULYX              =  112;
+      VDOPIA               =  113;
+      VI                   =  114;
+      VMG                  =  115;
+      VIDMATIC             =  116;
+      VMAX                 =  117;
+      VRTCAL               =  118;
+      VUNGLE               =  119;
+      WORDPRESS            =  120;
+      XROST                =  121;
+      YIELDLAB             =  122;
+      YIELDONE             =  123;
+      YIELDONE_ADS         =  124;
+      YIELDONE_INNITY      =  125;
+      YUME                 =  126;
+      ZEDO                 =  127;
+      ZEOTAP               =  128;
+      POLAR                =  129;
+      UNITY                =  130;
+      DAILYMOTION          =  131;
+      ADTELLIGENT          =  132;
+      GLISPA               =  133;
+      TRUSTX               =  134;
+      IRON_SOURCE          =  136;
+      BIDSWITCH_DEALS_FEED =  137;
+      SMARTY_ADS           =  138;
+      BIDSTACK             =  140;
+      ADASIA               =  141;
+      AD_UNITY             =  142;
+      ADVIEW               =  143;
+      AD_GENERATION        =  144;
+      AMOBEE               =  145;
+      ANTS                 =  146;
+      ADSTANDING           =  147;
+      PLAYBUZZ             =  148;
+      COLOSSUS             =  149;
+      CONVERGE_DIGITAL     =  150;
+      CONNECTAD            =  151;
+      CONEX                =  152;
+      CXENSE               =  153;
+      DASHBID              =  154;
+      DATAWRKZ             =  155;
+      DIGITAL_GARAGE       =  156;
+      AD_RU                =  157;
+      ADXMI                =  158;
+      AMEBA                =  159;
+      CHEETAH              =  160;
+      ERICSSON_EMODO       =  161;
+      EXELBID              =  162;
+      ADFULLY              =  163;
+      GIANT_MEDIA          =  164;
+      BROAD_SIGN           =  165;
+      IMPROVE_DIGITAL      =  166;
+      BRAINY               =  167;
+      DISH_NETWORK         =  168;
+      ADVERLINE            =  169;
+      LODEO                =  170;
+      LOOPME               =  171;
+      ADMAN                =  172;
+      ADMATIC              =  173;
+      MADVERTISE_MEDIA     =  174;
+      ADMIX                =  175;
+      GAMMA                =  176;
+      YIELDMO              =  177;
+      ZNAPTAG              =  178;
+      NATIVO               =  179;
+      MEDIA_NET            =  180;
+      CHOCOLATE            =  181;
+      OGURY                =  182;
+      ONETAG               =  183;
+      OUTBRAIN             =  184;
+      PERSONAGRAPH         =  185;
+      DEEP_INTENT          =  186;
+      PLAYTEM              =  187;
+      POKKT                =  188;
+      POLYMORPHICADS       =  189;
+      POWERINBOX           =  190;
+      PRIMIS               =  191;
+      QUANTX               =  192;
+      RAKUTEN              =  193;
+      REKLAMSTORE          =  194;
+      RELAIDO              =  195;
+      REVCONTENT           =  196;
+      ADVERTY              =  197;
+      SEEDTAG              =  198;
+      SELECTMEDIA          =  199;
+      COLUMN6              =  200;
+      SORENSON             =  201;
+      SPICY                =  202;
+      SYNACOR              =  203;
+      TABOOLA              =  204;
+      TAGON                =  205;
+      TENMAX               =  206;
+      ADTOMA               =  207;
+      ATWOX                =  208;
+      UNDERTONE            =  210;
+      VENA_TV              =  211;
+      VERTOZ               =  212;
+      INADVIA              =  213;
+      WEBORAMA             =  214;
+      WOOBI                =  215;
+      YENGO                =  216;
+      YOC                  =  217;
+      ZIFF_DAVIS           =  218;
+      OZONE                =  219;
+      THIRTY_THREE_ACROSS  =  220;
+      SAMSUNG              =  221;
+      PHUNWARE             =  222;
+      IMPROVE              =  223;
+      DISTRICTM            =  224;
+      INMOBI               =  225;
+      CONNATIX             =  226;
+      EMX                  =  227;
+      SPRINGSERVE          =  228;
+      VERVE                =  229;
+>>>>>>> upstream/master
     }
 
     // Placement Type of the OpenRTB Bid Request
@@ -990,6 +1221,7 @@ message Enums {
       US_EAST_1 = 1;
       US_WEST_2 = 2;
       EU_WEST_1 = 3;
+      AP_NORTHEAST_1 = 4;
     }
 
     // Continents are nonoverlapping geographic areas. Continent-to-DataCenter
@@ -1001,8 +1233,9 @@ message Enums {
     enum Continent {
       // Keep continents in sync with Buzz
       UNKNOWN_CONTINENT = 0;
-      NAM = 1; // North America
+      NAM = 1;  // North America
       EMEA = 2; // Europe, the Middle East & Asia
+      APAC = 3; // Asia Pacific
     }
 
     // Impression trackers are explicit fields in the BidResponse sent back to the
