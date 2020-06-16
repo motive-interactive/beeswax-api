@@ -11,7 +11,7 @@
 package augment
 
 import (
-	openrtb "beeswax/openrtb"
+	openrtb "github.com/motive-interactive/beeswax-api/beeswax/openrtb"
 	proto "github.com/golang/protobuf/proto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
