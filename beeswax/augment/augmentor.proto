@@ -7,6 +7,7 @@ package augment;
 
 option java_package = "com.beeswax.augment";
 option cc_enable_arenas = true;
+option go_package = "github.com/motive-interactive/beeswax-api/beeswax/augment";
 
 import "beeswax/openrtb/openrtb.proto";
 

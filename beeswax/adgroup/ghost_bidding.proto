@@ -6,6 +6,7 @@ package adgroup;
 
 option java_package = "com.beeswax.adgroup";
 option cc_enable_arenas = true;
+option go_package = "github.com/motive-interactive/beeswax-api/beeswax/adgroup";
 
 // Next Tag: 2
 message GhostBidding {

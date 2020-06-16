@@ -6,6 +6,7 @@ syntax="proto2";
 package bid;
 
 option java_package = "com.beeswax.bid";
+option go_package = "github.com/motive-interactive/beeswax-api/beeswax/bid";
 
 import "beeswax/bid/adcandidate.proto";
 import "beeswax/openrtb/openrtb.proto";
