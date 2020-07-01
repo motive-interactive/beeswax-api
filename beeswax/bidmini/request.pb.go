@@ -6,7 +6,7 @@ package bidmini
 import proto "github.com/gogo/protobuf/proto"
 import fmt "fmt"
 import math "math"
-import openrtbmini "beeswax/openrtbmini"
+import openrtbmini "github.com/motive-interactive/beeswax-api/beeswax/openrtbmini"
 
 import io "io"
 
